@@ -1,17 +1,18 @@
 @import "variables.less";
 @import "mixins.less";
 
+
 body {
 	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	overflow-x: hidden;
 }
 
 p {
-	font-size: 20px;
+	font-size: 1em;
 }
 
 p.small {
-	font-size: 16px;
+	font-size: 0.83em;
 }
 
 a,
@@ -30,7 +31,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 hr.star-light,
-hr.star-primary {
+hr.star-primary, 
+hr.bolt-light,
+hr.pencil-light {
     padding: 0;
     border: none;
     border-top: solid 5px;
@@ -38,6 +41,7 @@ hr.star-primary {
     max-width: 250px;
     margin: 25px auto 30px;
 }
+
 
 hr.star-light:after,
 hr.star-primary:after {
@@ -50,11 +54,37 @@ hr.star-primary:after {
     padding: 0 0.25em;
 }
 
-hr.star-light {
+hr.bolt-light:after {
+    content: "\f0e7";
+    font-family: FontAwesome;
+    display: inline-block;
+    position: relative;
+    top: -0.8em;
+    font-size: 2em;
+    padding: 0 0.25em;
+}
+
+hr.pencil-light:after {
+    content: "\f044";
+    font-family: FontAwesome;
+    display: inline-block;
+    position: relative;
+    top: -0.8em;
+    font-size: 2em;
+    padding: 0 0.25em;
+    background-color: @theme-primary;
+    color:white;
+}
+
+hr.star-light, 
+hr.bolt-light,
+{
     border-color: white;
 }
 
-hr.star-light:after {
+hr.star-light:after, 
+hr.bolt-light:after,
+{
     background-color: @theme-success;
     color: white;
 }
@@ -67,6 +97,7 @@ hr.star-primary:after {
     background-color: white;
     color: @theme-primary;
 }
+
 
 .img-centered {
 	margin: 0 auto;
@@ -90,7 +121,7 @@ header {
 			font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
 			text-transform: uppercase;
 			font-weight: 700;
-			font-size: 2em;
+			font-size: 1em;
 		}
 		.skills {
 			font-size: 1.25em;
@@ -108,6 +139,7 @@ header {
 		.intro-text {
 			.name {
 				font-size: 4.75em;
+                letter-spacing: 0.06em;
 			}
 			.skills {
 				font-size: 1.75em;
@@ -217,6 +249,11 @@ section.success {
 	section.first {
 		padding-top: 75px;
 	}
+}
+
+#about {
+    color: white;
+    background: @theme-primary;
 }
 
 #portfolio {
