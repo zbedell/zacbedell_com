@@ -20,7 +20,7 @@ a:hover,
 a:focus,
 a:active,
 a.active {
-	color: @theme-success;
+	color: @red-primary;
 	outline: none;
 }
 
@@ -28,12 +28,13 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 	font-weight: 700;
-}
+    }
 
+// ICONS
 hr.star-light,
 hr.star-primary, 
 hr.bolt-light,
-hr.pencil-light {
+hr.pencil-primary {
     padding: 0;
     border: none;
     border-top: solid 5px;
@@ -64,7 +65,7 @@ hr.bolt-light:after {
     padding: 0 0.25em;
 }
 
-hr.pencil-light:after {
+hr.pencil-primary:after {
     content: "\f044";
     font-family: FontAwesome;
     display: inline-block;
@@ -72,8 +73,8 @@ hr.pencil-light:after {
     top: -0.8em;
     font-size: 2em;
     padding: 0 0.25em;
-    background-color: @theme-primary;
-    color:white;
+    background-color: white;
+    color:@blue-primary;
 }
 
 hr.star-light, 
@@ -82,31 +83,35 @@ hr.bolt-light,
     border-color: white;
 }
 
-hr.star-light:after, 
-hr.bolt-light:after,
+hr.star-light:after
 {
-    background-color: @theme-success;
+    background-color: @gold-primary;
     color: white;
 }
 
-hr.star-primary {
-    border-color: @theme-primary;
+hr.bolt-light:after{
+    background-color: darken(@blue-primary, 17%);
+    color: @gold-primary;
 }
 
 hr.star-primary:after {
-    background-color: white;
-    color: @theme-primary;
+    background-color: lighten(@gold-primary, 45%);
+    color: @blue-primary;
 }
-
+hr.star-primary {    
+    border-color: @gold-primary;
+}
 
 .img-centered {
 	margin: 0 auto;
 }
 
+
+// HEADER
 header {
 	text-align: center;
-	background: @theme-success;
-	color: white;
+	background: darken(@blue-primary, 17%);
+	color: @gold-primary;
 	.container {
 		padding-top: 100px;
 		padding-bottom: 50px;
@@ -121,7 +126,7 @@ header {
 			font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
 			text-transform: uppercase;
 			font-weight: 700;
-			font-size: 1em;
+			font-size: 1.35em;
 		}
 		.skills {
 			font-size: 1.25em;
@@ -138,7 +143,7 @@ header {
 		}
 		.intro-text {
 			.name {
-				font-size: 4.75em;
+				font-size: 3.75em;
                 letter-spacing: 0.06em;
 			}
 			.skills {
@@ -148,17 +153,19 @@ header {
 	}
 }
 
+// NAVBAR
 .navbar-custom {
-	background: @theme-primary;
+    background: @blue-primary;
 	font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 	font-weight: 700;
-	border: none;
+    border-top: thick solid @red-primary;
+    border-bottom: none;
 	a:focus {
 		outline: none;
 	}
 	.navbar-brand {
-		color: white;
+		color: darken(@blue-primary, 17%);
 		&:hover,
 		&:focus,
 		&:active,
@@ -172,7 +179,7 @@ header {
 			a {
 				color: white;
 				&:hover {
-					color: @theme-success;
+					color: @gold-primary;
 					outline: none;
 				}
 				&:focus,
@@ -183,12 +190,12 @@ header {
 			&.active {
 				a {
 					color: white;
-					background: @theme-success;
+					background: @gold-primary;
 					&:hover,
 					&:focus,
 					&:active {
 						color: white;
-						background: @theme-success;
+						background: @gold-primary;
 					}
 				}
 			}
@@ -201,9 +208,9 @@ header {
 		border-color: white;
 		&:hover,
 		&:focus {
-			background-color: @theme-success;
+			background-color: @gold-primary;
 			color: white;
-			border-color: @theme-success;
+			border-color: @red-primary;
 		}
 	}
 }
@@ -229,17 +236,13 @@ header {
 	}
 }
 
+// SECTION
 section {
     padding: 100px 0;
     h2 {
     	margin: 0;
     	font-size: 3em;
     }
-}
-
-section.success {
-	background: @theme-success;
-	color: white;
 }
 
 @media(max-width:767px) {
@@ -251,12 +254,20 @@ section.success {
 	}
 }
 
+// ABOUT
 #about {
-    color: white;
-    background: @theme-primary;
+    color: darken(@blue-primary, 17%);
+    background: white;
+    hr, h2 {
+        color: @blue-primary;
+    }
 }
 
+// PORTFOLIO
 #portfolio {
+    background: lighten(@gold-primary, 45%);
+        
+    h2 {color: @blue-primary;}
     .portfolio-item {
         margin: 0 0 15px;
         right: 0;
@@ -266,7 +277,7 @@ section.success {
             max-width: 400px;
             margin: 0 auto;
             .caption {
-                background: fade(@theme-success, 90%);
+                background: fade(@blue-primary, 33%);
                 position: absolute;
                 width: 100%;
                 height: 100%;
@@ -310,6 +321,72 @@ section.success {
     }
 }
 
+// PORTFOLIO MODAL
+
+.portfolio-modal {
+	.modal-content {
+	    border-radius: 0;
+	    background-clip: border-box;
+	    -webkit-box-shadow: none;
+	    box-shadow: none;
+	    border: none;
+	    min-height: 100%;
+	    padding: 100px 0;
+	    text-align: center;
+		h2 {
+	    	margin: 0;
+	    	font-size: 3em;
+		}
+		img {
+			margin-bottom: 30px;
+		}
+		.item-details {
+			margin: 30px 0;
+		}
+	}
+    .close-modal {
+        position: absolute;
+        width:75px;
+        height:75px;
+        background-color:transparent;
+        top: 25px;
+        right: 25px;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.3;
+        }
+        .lr {
+            height:75px;
+            width:1px;
+            margin-left:35px;
+            background-color:@blue-primary;
+            transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            /* IE 9 */
+            -webkit-transform: rotate(45deg);
+            /* Safari and Chrome */
+            z-index:1051;
+            .rl {
+                height:75px;
+                width:1px;
+                background-color:@blue-primary;
+                transform: rotate(90deg);
+                -ms-transform: rotate(90deg);
+                /* IE 9 */
+                -webkit-transform: rotate(90deg);
+                /* Safari and Chrome */
+                z-index:1052;
+            }
+        }
+    }
+    .modal-backdrop {
+    	opacity: 0;
+    	display: none;
+    }
+}
+
+
+// CONTACT
 .floating-label-form-group {
     position: relative;
     margin-bottom: 0;
@@ -359,7 +436,7 @@ section.success {
 
 .floating-label-form-group-with-focus {
 	label {
-	    color: @theme-success;
+	    color: @blue-primary;
 	}
 }
 
@@ -374,23 +451,22 @@ footer {
 	}
 	.footer-above {
 		padding-top: 50px;
-		background-color: @theme-primary;
+		background-color: @blue-primary;
 	}
 	.footer-col {
 		margin-bottom: 50px;
 	}
 	.footer-below {
 		padding: 25px 0;
-		background-color: darken(@theme-primary, 5%);
+		background-color: darken(@blue-primary, 17%);
 	}
 }
 
-// Buttons
-
+// BUTTONS
 .btn-outline {
-	color: white;
+	color: @blue-primary;
 	font-size: 20px;
-	border: solid 2px white;
+	border: solid 2px @blue-primary;
 	background: transparent;
 	transition: all 0.3s ease-in-out;
 	margin-top: 15px;
@@ -398,19 +474,19 @@ footer {
 	&:focus,
 	&:active,
 	&.active {
-		color: @theme-success;
+		color: @red-primary;
+        border: solid 2px @gold-primary;
 		background: white;
-		border: solid 2px white;
 	}
 }
 
 .btn-primary {
-	.button-variant(white; @theme-primary; @theme-primary);
+	.button-variant(white; @blue-primary; @blue-primary);
 	font-weight: 700;
 }
 
 .btn-success {
-	.button-variant(white; @theme-success; @theme-success);
+	.button-variant(white; @blue-primary; @blue-primary);
 	font-weight: 700;
 }
 
@@ -447,67 +523,5 @@ footer {
 	    &:focus {
 	    	outline: none;
 	    }
-    }
-}
-
-.portfolio-modal {
-	.modal-content {
-	    border-radius: 0;
-	    background-clip: border-box;
-	    -webkit-box-shadow: none;
-	    box-shadow: none;
-	    border: none;
-	    min-height: 100%;
-	    padding: 100px 0;
-	    text-align: center;
-		h2 {
-	    	margin: 0;
-	    	font-size: 3em;
-		}
-		img {
-			margin-bottom: 30px;
-		}
-		.item-details {
-			margin: 30px 0;
-		}
-	}
-    .close-modal {
-        position: absolute;
-        width:75px;
-        height:75px;
-        background-color:transparent;
-        top: 25px;
-        right: 25px;
-        cursor: pointer;
-        &:hover {
-            opacity: 0.3;
-        }
-        .lr {
-            height:75px;
-            width:1px;
-            margin-left:35px;
-            background-color:@theme-primary;
-            transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            /* IE 9 */
-            -webkit-transform: rotate(45deg);
-            /* Safari and Chrome */
-            z-index:1051;
-            .rl {
-                height:75px;
-                width:1px;
-                background-color:@theme-primary;
-                transform: rotate(90deg);
-                -ms-transform: rotate(90deg);
-                /* IE 9 */
-                -webkit-transform: rotate(90deg);
-                /* Safari and Chrome */
-                z-index:1052;
-            }
-        }
-    }
-    .modal-backdrop {
-    	opacity: 0;
-    	display: none;
     }
 }
