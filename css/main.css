@@ -118,23 +118,16 @@ header .intro-text .name {
   font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 1.35em;
+  font-size: 3.35em;
 }
 header .intro-text .skills {
-  font-size: 1.25em;
+  font-size: 1.75em;
   font-weight: 300;
 }
 @media (min-width: 768px) {
   header .container {
     padding-top: 200px;
     padding-bottom: 100px;
-  }
-  header .intro-text .name {
-    font-size: 3.75em;
-    letter-spacing: 0.06em;
-  }
-  header .intro-text .skills {
-    font-size: 1.75em;
   }
 }
 .navbar-custom {
@@ -256,8 +249,12 @@ section h2 {
 #portfolio .portfolio-content .caption {
   margin: 5px 0;
 }
-#portfolio .portfolio-content .portfolio-item {
+#portfolio .portfolio-content .portfolio-slider .portfolio-item {
   margin-bottom: 30px;
+  width: 100%;
+}
+#portfolio .portfolio-content .portfolio-slider .portfolio-item p {
+  margin: 7px 0 0 0;
 }
 #portfolio1,
 #portfolio2,
@@ -275,6 +272,9 @@ section h2 {
   #portfolio .portfolio-item {
     margin: 0 0 30px;
   }
+  #portfolio .portfolio-item a {
+    cursor: zoom-in;
+  }
 }
 #skills h2 {
   color: #18678E;
@@ -284,6 +284,11 @@ section h2 {
 }
 #skills hr {
   color: #E0AA1D;
+}
+@media (max-width: 767px) {
+  #skills .skill-list {
+    margin: 0 0 33px 20%;
+  }
 }
 footer {
   color: white;
@@ -317,48 +322,6 @@ footer .footer-below {
   color: #E0461D;
   border: solid 2px #E0AA1D;
   background: white;
-}
-.btn-primary {
-  color: white;
-  background-color: #18678E;
-  border-color: #18678E;
-  font-weight: 700;
-}
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.open .dropdown-toggle.btn-primary {
-  color: white;
-  background-color: #114762;
-  border-color: #0f415a;
-}
-.btn-primary:active,
-.btn-primary.active,
-.open .dropdown-toggle.btn-primary {
-  background-image: none;
-}
-.btn-primary.disabled,
-.btn-primary[disabled],
-fieldset[disabled] .btn-primary,
-.btn-primary.disabled:hover,
-.btn-primary[disabled]:hover,
-fieldset[disabled] .btn-primary:hover,
-.btn-primary.disabled:focus,
-.btn-primary[disabled]:focus,
-fieldset[disabled] .btn-primary:focus,
-.btn-primary.disabled:active,
-.btn-primary[disabled]:active,
-fieldset[disabled] .btn-primary:active,
-.btn-primary.disabled.active,
-.btn-primary[disabled].active,
-fieldset[disabled] .btn-primary.active {
-  background-color: #18678E;
-  border-color: #18678E;
-}
-.btn-primary .badge {
-  color: #18678E;
-  background-color: white;
 }
 .btn-email {
   color: white;
@@ -395,7 +358,13 @@ fieldset[disabled] .btn-primary.active {
   height: 50px;
   border-radius: 100%;
   line-height: 28px;
+  color: white;
+  background: #E0AA1D;
 }
-.scroll-top .btn:focus {
-  outline: none;
+.scroll-top .btn:hover {
+  color: #E0461D;
+  border: 5px solid #E0AA1D;
+  background: white;
+  padding-top: 2px;
+  padding-left: 11px;
 }

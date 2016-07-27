@@ -137,10 +137,10 @@ header {
 			font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
 			text-transform: uppercase;
 			font-weight: 700;
-			font-size: 1.35em;
+			font-size: 3.35em;
 		}
 		.skills {
-			font-size: 1.25em;
+			font-size: 1.75em;
 			font-weight: 300;
 		}
 	}
@@ -151,15 +151,6 @@ header {
 		.container {
 			padding-top: 200px;
 			padding-bottom: 100px;
-		}
-		.intro-text {
-			.name {
-				font-size: 3.75em;
-                letter-spacing: 0.06em;
-			}
-			.skills {
-				font-size: 1.75em;
-			}
 		}
 	}
 }
@@ -248,7 +239,7 @@ header {
 	}
 }
 
-// SECTION
+// ALL SECTIONS
 section {
     padding: 100px 0;
     h2 {
@@ -294,8 +285,12 @@ section {
         .caption {
             margin: 5px 0;
         }
-        .portfolio-item {
-            margin-bottom: 30px;
+        .portfolio-slider{
+            .portfolio-item {
+                margin-bottom: 30px;
+                width: 100%;
+                p {margin: 7px 0 0 0;}
+                }
         }
     }
 }
@@ -313,6 +308,7 @@ section {
     #portfolio {
         .portfolio-item {
             margin: 0 0 30px;
+            a {cursor: zoom-in;}
         }
     }
 }
@@ -324,7 +320,16 @@ section {
     hr {color: @gold-primary;}
 }
 
+@media(max-width:767px) {
+    #skills {
+        .skill-list {
+            margin: 0 0 33px 20%;
+        }
+    }
+}
 
+
+// FOOTER
 footer {
 	color: white;
 	h3 {
@@ -359,11 +364,6 @@ footer {
         border: solid 2px @gold-primary;
 		background: white;
 	}
-}
-
-.btn-primary {
-	.button-variant(white; @blue-primary; @blue-primary);
-	font-weight: 700;
 }
 
 .btn-email {
@@ -403,8 +403,14 @@ footer {
 	    height: 50px;
 	    border-radius: 100%;
 	    line-height: 28px;
-	    &:focus {
-	    	outline: none;
+        color: white;
+        background: @gold-primary;
+	    &:hover {
+            color:@red-primary;
+            border: 5px solid @gold-primary;
+            background: white;
+            padding-top: 2px;
+            padding-left: 11px;
 	    }
     }
 }
