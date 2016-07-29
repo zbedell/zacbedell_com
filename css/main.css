@@ -235,6 +235,12 @@ section h2 {
 #portfolio p {
   color: #0b3144;
 }
+#portfolio .portfolio-item a {
+  cursor: zoom-in;
+}
+#portfolio .portfolio-item a.cursor-normal {
+  cursor: pointer;
+}
 #portfolio .portfolio-content {
   margin: 17px 0;
   padding: 17px 0;
@@ -266,11 +272,6 @@ section h2 {
 #portfolio5 {
   margin: 0;
   width: inherit;
-}
-@media (min-width: 767px) {
-  #portfolio .portfolio-item a {
-    cursor: zoom-in;
-  }
 }
 #skills h2 {
   color: #18678E;

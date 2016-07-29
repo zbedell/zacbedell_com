@@ -272,6 +272,10 @@ section {
     background: lighten(@gold-primary, 37%);
     padding: 41px 0;
     h4, p {color: darken(@blue-primary, 17%);}
+    .portfolio-item {
+        a {cursor: zoom-in;}
+        a.cursor-normal{cursor: pointer;}
+        }
     .portfolio-content {
         margin: 17px 0;
         padding: 17px 0;
@@ -293,6 +297,7 @@ section {
         }
     }
 }
+
 #portfolio1, #portfolio2, #portfolio3, #portfolio4 {
     background: lighten(@gold-primary, 45%);
     margin: 0;
@@ -303,13 +308,6 @@ section {
     width: inherit;
 }
 
-@media(min-width:767px) {
-    #portfolio {
-        .portfolio-item {
-            a {cursor: zoom-in;}
-        }
-    }
-}
 
 // SKILLS
 #skills {
